@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@google/generative-ai": "^0.24.1",
