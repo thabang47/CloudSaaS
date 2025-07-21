@@ -50,11 +50,12 @@ async function processPendingCampaigns() {
   try {
     // Get all users with pending campaigns
     const usersWithPendingCampaigns = await query(
-      `SELECT DISTINCT uid FROM beta_campaign 
-       WHERE status = 'PENDING' OR status = 'IN_PROGRESS'
-       ORDER BY createdAt ASC`,
+      `SELECT DISTINCT uid, createdAt FROM beta_campaign 
+      WHERE status = 'PENDING' OR status = 'IN_PROGRESS'
+      ORDER BY createdAt ASC`,
       []
     );
+
 
     if (!usersWithPendingCampaigns || usersWithPendingCampaigns.length === 0) {
       return;
